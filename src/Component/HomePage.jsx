@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import ''
 
 const HomePage = () => {
     const [showLoginForm, setShowLoginForm] = useState(false);
@@ -10,11 +11,11 @@ const HomePage = () => {
     };
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div style={styles.homepageBg} className="text text-white">
+            <nav className="navbar navbar-expand-lg navbar-light color-light">
                 <div className="container-fluid">
                     {/* Navbar Brand */}
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand text-white" href="#">
                         Tech Shop
                     </a>
 
@@ -32,9 +33,15 @@ const HomePage = () => {
 
                     <div className="collapse navbar-collapse" id="navbarIcons">
                         {/* Icons */}
-                        <div className="d-flex ms-auto ">
-                            <i className="fa-solid fa-magnifying-glass me-3 p-2" title="Search"></i>
-                            <i className="fa-solid fa-cart-shopping me-3 p-2" title="Cart"></i>
+                        <div className="d-flex ms-auto">
+                            <i
+                                className="fa-solid fa-magnifying-glass me-3 p-2"
+                                title="Search"
+                            ></i>
+                            <i
+                                className="fa-solid fa-cart-shopping me-3 p-2"
+                                title="Cart"
+                            ></i>
                             {/* User Icon */}
                             <i
                                 className="fa-solid fa-user p-2"
@@ -49,16 +56,14 @@ const HomePage = () => {
 
             {/* Login Form - Visible based on `showLoginForm` */}
             {showLoginForm && (
-                <div className="Loginform" style={styles.loginForm}>
+                <div className="Loginform text bg-dark text-white" style={styles.loginForm}>
                     <h3>Hello!</h3>
                     <p>Access account and manage orders</p>
                     <a href="./Form.html" className="form-btn">
                         <button className="loginSignup" style={styles.button}>
-                            
                             <Link to="/login">
-                                <span style={{  color: 'white' }}>Login/Signup</span>
+                                <span style={{ color: "white" }}>Login/Signup</span>
                             </Link>
-
                         </button>
                     </a>
                     <br />
@@ -72,6 +77,13 @@ const HomePage = () => {
 
 // Inline styles for simplicity (can be replaced with CSS)
 const styles = {
+    homepageBg: {
+        backgroundColor: "black", // Black background for the entire page
+        color:" #b0c4de",
+        minHeight: "100vh", // Ensures the black background covers the entire viewport
+        margin: 0,
+        padding: 0,
+    },
     loginForm: {
         position: "absolute",
         top: "60px",
@@ -85,7 +97,7 @@ const styles = {
     },
     button: {
         backgroundColor: "#007bff",
-        color: 'white',
+        color: "white",
         border: "none",
         padding: "10px 20px",
         borderRadius: "5px",
@@ -94,5 +106,3 @@ const styles = {
 };
 
 export default HomePage;
-
-

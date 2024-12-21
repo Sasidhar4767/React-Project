@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
+const Signup = () => {
     const styles = {
         body: {
             backgroundColor: 'black',
@@ -39,6 +38,7 @@ const LoginForm = () => {
             display: 'flex',
             margin: '20px auto',
             justifyContent: 'space-between',
+            margin: '17px',
         },
         social: {
             padding: '10px',
@@ -65,32 +65,17 @@ const LoginForm = () => {
     return (
         <div style={styles.body}>
             <form style={styles.form}>
-                <h1>Login</h1>
-                <p>
-                    New to Tech-Shop?{' '}
-                    <Link to="/signup"> {/* Updated path */}
-                        <span style={styles.Loginform}>Create an account</span>
-                    </Link>
-                </p>
-                <input
-                    type="email"
-                    name="Email"
-                    placeholder="Email"
-                    required
-                    style={styles.input}
-                />
+                <h1>Signup</h1>
+                <p>Already have an account? <span style={styles.Loginform}>Login</span></p>
+                <input type="text" name="Username" placeholder="Username" required style={styles.input} />
                 <br />
-                <input
-                    type="password"
-                    name="Password"
-                    placeholder="Password"
-                    required
-                    style={styles.input}
-                />
+                <input type="email" name="Email" placeholder="Email" required style={styles.input} />
                 <br />
-                <button type="submit" style={styles.button}>
-                    Login
-                </button>
+                <input type="password" name="Password" placeholder="Password" required style={styles.input} />
+                <br />
+                <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required style={styles.input} />
+                <br />
+                <button type="submit" style={styles.button}>Signup</button>
                 <p style={styles.loginText}>or login with</p>
             </form>
             <div style={styles.socialContainer}>
@@ -102,4 +87,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default Signup;
