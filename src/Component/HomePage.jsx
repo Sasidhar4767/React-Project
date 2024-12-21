@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
     const [showLoginForm, setShowLoginForm] = useState(false);
@@ -10,7 +11,6 @@ const HomePage = () => {
 
     return (
         <div>
-            <div>HomePage</div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     {/* Navbar Brand */}
@@ -54,7 +54,11 @@ const HomePage = () => {
                     <p>Access account and manage orders</p>
                     <a href="./Form.html" className="form-btn">
                         <button className="loginSignup" style={styles.button}>
-                            Login/Signup
+                            
+                            <Link to="/login">
+                                <span style={{  color: 'white' }}>Login/Signup</span>
+                            </Link>
+
                         </button>
                     </a>
                     <br />
@@ -81,7 +85,7 @@ const styles = {
     },
     button: {
         backgroundColor: "#007bff",
-        color: "#fff",
+        color: 'white',
         border: "none",
         padding: "10px 20px",
         borderRadius: "5px",
