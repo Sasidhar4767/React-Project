@@ -71,6 +71,59 @@ const HomePage = () => {
                     <p>Please login</p>
                 </div>
             )}
+
+            <footer>
+                <div className="footer-shap">
+                    <h2>Tech-Shop</h2>
+                    <p>Subscribe to our Email alerts to receive early discount offers, and new products info</p>
+                    <input type="email" placeholder="Email Address*" /> <br /><br />
+                    <button>Subscribe</button>
+                </div>
+                <div className="footer-shap-1">
+                    <h3 id="footer-shap">Help</h3>
+                    <ul>
+                        <li>FAQs</li>
+                        <li>Track Order</li>
+                        <li>Cancel Order</li>
+                        <li>Return Order</li>
+                        <li>Warranty Info</li>
+                    </ul>
+                </div>
+                <div className="footer-shap-2">
+                    <h3 id="footer-shap">Policies</h3>
+                    <ul>
+                        <li>Return Policy</li>
+                        <li>Security</li>
+                        <li>Sitemap</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms & Conditions</li>
+                    </ul>
+                </div>
+                <div className="footer-shap-3">
+                    <h3 id="footer-shap">Company</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Service Center</li>
+                        <li>Careers</li>
+                        <li>Affiliates</li>
+                    </ul>
+                </div>
+            </footer>
+             <section className="fo">
+                    <div className="footerbottom">
+                        <div className="foortbottom-1">
+                            <p>2024 | All Rights Reserved. Built by |</p>
+                            <p>RANGAPPA GARI SASIDHAR</p>
+                        </div>
+                        <div className="foortbottom-2">
+                            <i className="fa-brands fa-facebook-f iconfooter"></i>
+                            <i className="fa-brands fa-twitter iconfooter" ></i>
+                            <i className="fa-brands fa-instagram iconfooter"></i>
+                            <i className="fa-brands fa-linkedin-in iconfooter"></i>
+                        </div>
+                    </div>
+            </section>
         </div>
     );
 };
@@ -79,7 +132,7 @@ const HomePage = () => {
 const styles = {
     homepageBg: {
         backgroundColor: "black", // Black background for the entire page
-        color:" #b0c4de",
+        color: " #b0c4de",
         minHeight: "100vh", // Ensures the black background covers the entire viewport
         margin: 0,
         padding: 0,
