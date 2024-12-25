@@ -66,7 +66,9 @@ const Signup = () => {
         <div style={styles.body}>
             <form style={styles.form}>
                 <h1>Signup</h1>
+                
                 <p>Already have an account? <span style={styles.Loginform}>Login</span></p>
+
                 <input type="text" name="Username" placeholder="Username" required style={styles.input} />
                 <br />
                 <input type="email" name="Email" placeholder="Email" required style={styles.input} />

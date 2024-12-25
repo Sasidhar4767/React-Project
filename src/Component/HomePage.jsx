@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 // import ''
 
 const HomePage = () => {
@@ -9,6 +10,70 @@ const HomePage = () => {
     const toggleLoginForm = () => {
         setShowLoginForm((prevState) => !prevState);
     };
+
+
+
+
+
+
+
+    const products = [
+        {
+            // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+            alt: "boAt Airdopes",
+            name: "boAt Airdopes",
+            heading: "Featherweight For Comfort All-Day.",
+            price: "₹1,099",
+            oldPrice: "₹2,990",
+        },
+        {
+            // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+            alt: "JBL Live 660NC",
+            name: "JBL Live 660NC",
+            heading: "Keep The Noise Out, Or In. You Choose.",
+            price: "₹9,999",
+            oldPrice: "₹14,999",
+        },
+        {
+            // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+            alt: "Sony WH-XB910N",
+            name: "Sony WH-XB910N",
+            heading: "Give Your Favourite Music A Boost.",
+            price: "₹13,489",
+            oldPrice: "₹19,990",
+        },
+
+    ];
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const nextButton = document.querySelector(".carousel-control-next");
+            nextButton.click();
+        }, 500000); // Move every 1 second
+
+        // Cleanup the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+    }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div style={styles.homepageBg} className="text text-white">
@@ -72,6 +137,100 @@ const HomePage = () => {
                 </div>
             )}
 
+
+
+
+
+
+
+            <div
+                id="carouselExampleIndicators"
+                className="carousel slide bg-black"
+                data-bs-ride="carousel"
+                data-bs-interval="1000" // Set interval to 1 second (1000 milliseconds)
+            >
+                {/* Indicators */}
+                <div className="carousel-indicators">
+                    {products.map((_, index) => (
+                        <button
+                            key={index}
+                            type="button"
+                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to={index}
+                            className={index === 0 ? "active" : ""}
+                            aria-current={index === 0 ? "true" : ""}
+                            aria-label={`Slide ${index + 1}`}
+                        ></button>
+                    ))}
+                </div>
+
+                {/* Carousel Inner */}
+                <div className="carousel-inner">
+                    {products.map((product, index) => (
+                        <div
+                            key={index}
+                            className={`carousel-item ${index === 0 ? "active" : ""}`}
+                        >
+                            <div className="Productdetails-02 d-flex align-items-center justify-content-center">
+                                {/* Product Details Section */}
+                                <section className="Productdetails-01">
+                                    <div className="Productsdetails-3">
+                                        <h6>{product.name}</h6>
+                                        <h2 className="w-100">{product.heading}</h2>
+                                        <h5>{product.price} <del>{product.oldPrice}</del></h5>
+                                        <button className="ShopNow">Shop Now</button>
+                                    </div>
+                                </section>
+
+                                {/* Product Image Section */}
+                                <section className="Productdetails-01">
+                                    <div className="Productdetails-4">
+                                        <img className="details" src={product.src} alt={product.alt} />
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Controls */}
+                <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+                    {/* <span className="carousel-control-prev-icon" aria-hidden="true"></span> */}
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    {/* <span className="carousel-control-next-icon" aria-hidden="true"></span> */}
+                    <span className="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <footer>
                 <div className="footer-shap">
                     <h2>Tech-Shop</h2>
@@ -110,19 +269,19 @@ const HomePage = () => {
                     </ul>
                 </div>
             </footer>
-             <section className="fo">
-                    <div className="footerbottom">
-                        <div className="foortbottom-1">
-                            <p>2024 | All Rights Reserved. Built by |</p>
-                            <p>RANGAPPA GARI SASIDHAR</p>
-                        </div>
-                        <div className="foortbottom-2">
-                            <i className="fa-brands fa-facebook-f iconfooter"></i>
-                            <i className="fa-brands fa-twitter iconfooter" ></i>
-                            <i className="fa-brands fa-instagram iconfooter"></i>
-                            <i className="fa-brands fa-linkedin-in iconfooter"></i>
-                        </div>
+            <section className="fo">
+                <div className="footerbottom">
+                    <div className="foortbottom-1">
+                        <p>2024 | All Rights Reserved. Built by |</p>
+                        <p>RANGAPPA GARI SASIDHAR</p>
                     </div>
+                    <div className="foortbottom-2">
+                        <i className="fa-brands fa-facebook-f iconfooter"></i>
+                        <i className="fa-brands fa-twitter iconfooter" ></i>
+                        <i className="fa-brands fa-instagram iconfooter"></i>
+                        <i className="fa-brands fa-linkedin-in iconfooter"></i>
+                    </div>
+                </div>
             </section>
         </div>
     );
