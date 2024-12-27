@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import ''
+
+
+
 
 const HomePage = () => {
     const [showLoginForm, setShowLoginForm] = useState(false);
@@ -18,8 +20,9 @@ const HomePage = () => {
 
 
     const products = [
-        {
-            // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+        {   
+            images: "/images/Heading-01.png",
+            // src: "../../public/images/Product-details-02.png",   Heading-01.png
             alt: "boAt Airdopes",
             name: "boAt Airdopes",
             heading: "Featherweight For Comfort All-Day.",
@@ -27,7 +30,9 @@ const HomePage = () => {
             oldPrice: "₹2,990",
         },
         {
+            
             // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+            images: "/images/TopProducts-7.png",
             alt: "JBL Live 660NC",
             name: "JBL Live 660NC",
             heading: "Keep The Noise Out, Or In. You Choose.",
@@ -35,7 +40,9 @@ const HomePage = () => {
             oldPrice: "₹14,999",
         },
         {
+            
             // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
+            images: "/images/RelatedProducts-1.png",
             alt: "Sony WH-XB910N",
             name: "Sony WH-XB910N",
             heading: "Give Your Favourite Music A Boost.",
@@ -164,8 +171,8 @@ const HomePage = () => {
                     ))}
                 </div>
 
-                {/* Carousel Inner */}
-                <div className="carousel-inner">
+                {/* Carousel Inner carousel-indicators slide */}
+                <div className="carousel-inner" >
                     {products.map((product, index) => (
                         <div
                             key={index}
@@ -185,7 +192,7 @@ const HomePage = () => {
                                 {/* Product Image Section */}
                                 <section className="Productdetails-01">
                                     <div className="Productdetails-4">
-                                        <img className="details" src={product.src} alt={product.alt} />
+                                        <img className="details" style={{ width: "300px", height: "300px" }} src={product.images} alt={product.alt} />
                                     </div>
                                 </section>
                             </div>
@@ -196,6 +203,7 @@ const HomePage = () => {
                 {/* Controls */}
                 <button
                     className="carousel-control-prev"
+                    style={{ width: "10px", height: "10x" }}
                     type="button"
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev"
@@ -204,7 +212,8 @@ const HomePage = () => {
                     <span className="visually-hidden">Previous</span>
                 </button>
                 <button
-                    className="carousel-control-next"
+                    className="carousel-control-next "
+
                     type="button"
                     data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next"
