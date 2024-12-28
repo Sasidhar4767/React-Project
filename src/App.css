@@ -62,6 +62,110 @@
 
 
 
+.TopProducts {
+  text-align: center;
+  color: lightsteelblue;
+  padding: 10px;
+}
+
+.Producttitle {
+  color: lightsteelblue;
+  padding: 10px;
+  margin: 50px;
+}
+
+.Producttitle:hover {
+  background-color: red;
+  color: wheat;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+#Producttitle {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0px 110px;
+}
+
+#TP {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5px;
+}
+
+.star {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  margin: 10px;
+  height: 490px;
+  width: 312px;
+  border: 1px solid #444343;
+}
+
+.Productborder {
+  width: 255px;
+  height: 245px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+}
+
+.Productborder p {
+  color: #919eaf;
+  font-size: small;
+  margin-left: 18px;
+}
+
+.Productborder img {
+  background-color: #181818;
+  width: 309px;
+  height: 250px;
+  /* padding-left: 0px; */
+  padding: 5px;
+}
+
+.Productborder-123 {
+  width: 310px;
+  margin-top: 190px;
+  margin-left: 70px;
+}
+
+.Starsymble {
+  color: red;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.Productborder-12 {
+  margin-left: 18px;
+  width: 300px;
+  color: lightsteelblue;;
+}
+
+hr {
+  border: 1px solid lightblue;
+  width: 240px;
+  color: black;
+  margin-left: 18px;
+}
+
+del{
+  color: rgb(116, 111, 111);
+}
+
+.addtocard {
+  background-color: red;
+  color: whitesmoke;
+  margin-left: 22px;
+  width: 250px;
+  padding: 20px;
+}
+
+
+
+
+
 
 
 

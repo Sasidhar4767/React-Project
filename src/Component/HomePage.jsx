@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
     const [showLoginForm, setShowLoginForm] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState("All");
 
     // Toggle the login form visibility
     const toggleLoginForm = () => {
@@ -20,7 +21,7 @@ const HomePage = () => {
 
 
     const products = [
-        {   
+        {
             images: "/images/Heading-01.png",
             // src: "../../public/images/Product-details-02.png",   Heading-01.png
             alt: "boAt Airdopes",
@@ -30,7 +31,7 @@ const HomePage = () => {
             oldPrice: "₹2,990",
         },
         {
-            
+
             // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
             images: "/images/TopProducts-7.png",
             alt: "JBL Live 660NC",
@@ -40,7 +41,7 @@ const HomePage = () => {
             oldPrice: "₹14,999",
         },
         {
-            
+
             // src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9C4kcDDaO_wFL7_5PP-EyOyxf3VATO7LAw&se",
             images: "/images/RelatedProducts-1.png",
             alt: "Sony WH-XB910N",
@@ -51,6 +52,116 @@ const HomePage = () => {
         },
 
     ];
+
+    const productes = [
+        {
+            image: "/images/RelatedProducts-1.png",
+            name: "JBL Live 660NC",
+            description: "Wireless Over-Ear NC Headphones",
+            price: "₹9,999",
+            originalPrice: "₹14,999",
+            stars: 5,
+        },
+        {
+            image: "/images/TopProducts-02.png",
+            name: "boAt Rockerz 518",
+            description: "On-Ear Wireless Headphones",
+            price: "₹1,299",
+            originalPrice: "₹3,990",
+            stars: 5,
+        },
+        {
+            image: "/images/TopProducts-3.png",
+            name: "boAt Airdopes 131",
+            description: "Wireless in-Ear Earbuds",
+            price: "₹1,099",
+            originalPrice: "₹2,990",
+            stars: 5,
+        },
+        {
+            image: "/images/TopProducts-4.png",
+            name: "BoAt BassHeads 110",
+            description: "In-Ear Wired Earphones",
+            price: "₹499",
+            originalPrice: "₹999",
+            stars: 4,
+        },
+        {
+            image: "/images/TopProducts-5.png",
+            name: "boAt Rockerz 410",
+            description: "Bluetooth & Wired On-Ear Headphones",
+            price: "₹1,599",
+            originalPrice: "₹2,990",
+            stars: 5,
+        },
+        {
+            image: "/images/TopProducts-6.png",
+            name: "JBL Live 200BT",
+            description: "In-Ear Wireless Neckbands",
+            price: "₹3,699",
+            originalPrice: "₹5,299",
+            stars: 4,
+        },
+        {
+            image: "/images/TopProducts-7.png",
+            name: "Sony WH-XB910N",
+            description: "Wireless Over-Ear Headphones",
+            price: "₹13,489",
+            originalPrice: "₹19,990",
+            stars: 4,
+        },
+        {
+            image: "/images/TopProducts-8.png",
+            name: "JBS Tune 760NC",
+            description: "Wireless Over-Ear NC Headphones",
+            price: "₹5,999",
+            originalPrice: "₹7,999",
+            stars: 4,
+        },
+        {
+            image: "/images/TopProducts-9.png",
+            name: "boAt Rockerz 255",
+            description: "In-Ear Wireless Neckbands",
+            price: "₹899",
+            originalPrice: "₹2,999",
+            stars: 5,
+        },
+        {
+            image: "/images/TopProducts-10.png",
+            name: "JBL Wave 100",
+            description: "In-Ear Truly Wireless Earbuds",
+            price: "₹2,999",
+            originalPrice: "₹6,999",
+            stars: 4,
+        },
+        {
+            image: "/images/TopProducts-11.png",
+            name: "Sony WF-1000XM4",
+            description: "Wireless in-Ear NC Headphones",
+            price: "₹19,990",
+            originalPrice: "₹24,990",
+            stars: 3,
+        }
+    ];
+
+
+    const categories = ["All", "Headphones", "Earbuds", "Earphones", "Neckbands"];
+
+  const filterProducts = (category) => {
+    if (category === "All") {
+      return productes;
+    }
+    return productes.filter((product) =>
+      product.description.toLowerCase().includes(category.toLowerCase())
+    );
+  };
+
+  const filteredProducts = filterProducts(selectedCategory);
+
+
+
+
+
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -226,7 +337,56 @@ const HomePage = () => {
 
 
 
-
+    <section>
+      <h2 className="TopProducts">Top Products</h2>
+      <div id="Producttitle">
+        {categories.map((category) => (
+          <section
+            key={category}
+            className={`Producttitle ${
+              selectedCategory === category ? "active" : ""
+            }`}
+            onClick={() => setSelectedCategory(category)}
+            style={{ cursor: "pointer" }}
+          >
+            {category}
+          </section>
+        ))}
+      </div>
+      <div id="TP">
+        {filteredProducts.map((product, index) => (
+          <section className="star" key={index}>
+            <div className="Productborder">
+              <img
+                className="Productimage"
+                src={product.image}
+                alt={product.name}
+              />
+              <h4 className="Starsymble">
+                {[...Array(product.stars)].map((_, i) => (
+                  <i key={i} className="fa-solid fa-star"></i>
+                ))}
+              </h4>
+              <h3 className="Productborder-12">{product.name}</h3>
+              <p className="Productborder-12">{product.description}</p>
+              <hr />
+              <h5 className="Productborder-12">
+                {product.price} <del>{product.originalPrice}</del>
+              </h5>
+              <button className="addtocard">Add to Card</button>
+            </div>
+          </section>
+        ))}
+        <section className="star">
+          <div className="Productborder-123">
+            <h3>Browse All </h3>
+            <h3>
+              Products <i className="fa-sharp fa-solid fa-arrow-right"></i>
+            </h3>
+          </div>
+        </section>
+      </div>
+    </section>
 
 
 

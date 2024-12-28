@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const styles = {
@@ -67,8 +68,12 @@ const Signup = () => {
             <form style={styles.form}>
                 <h1>Signup</h1>
                 
-                <p>Already have an account? <span style={styles.Loginform}>Login</span></p>
-
+                <p>Already have an account? 
+                    <Link to="/login">
+                        <span style={styles.Loginform}>Login</span>
+                    </Link>       
+                </p>
+                  
                 <input type="text" name="Username" placeholder="Username" required style={styles.input} />
                 <br />
                 <input type="email" name="Email" placeholder="Email" required style={styles.input} />
